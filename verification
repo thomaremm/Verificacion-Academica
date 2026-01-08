@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Portal de Verificación Académica</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .box {
+      background: #ffffff;
+      padding: 30px;
+      width: 420px;
+      border-radius: 6px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      font-size: 18px;
+      text-align: center;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 15px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 15px;
+      background: #003366;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <h1>Portal de Verificación Académica<br>República de Colombia</h1>
+
+    <input type="text" id="cedula" placeholder="Número de cédula de ciudadanía">
+    <button onclick="verificar()">Verificar</button>
+
+    <div class="result" id="resultado"></div>
+  </div>
+
+<script>
+function verificar() {
+  const cedula = document.getElementById("cedula").value;
+  const resultado = document.getElementById("resultado");
+
+  if (cedula === "16939249") {
+    resultado.innerHTML = `
+      <strong>Resultado de verificación</strong><br><br>
+      Nombre completo: Johan Erwing Hinestroza Torres<br>
+      Cédula de ciudadanía: 16.939.249<br>
+      Fecha de graduación: 12 de diciembre de 2017<br>
+      País: República de Colombia
+    `;
+  } else {
+    resultado.innerHTML = "No se encontró información asociada al número ingresado.";
+  }
+}
+</script>
+
+</body>
+</html>
